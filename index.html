@@ -65,20 +65,38 @@
     </div>
 
     <script>
-        function yesClick() {
-            document.body.innerHTML =
-                "<h1 style='color:white;text-align:center;'>Yayyy! I Love You ❤️🥰</h1>";
-        }
 
-        function moveNo() {
-            var x = Math.random() * (window.innerWidth - 100);
-            var y = Math.random() * (window.innerHeight - 100);
+let messages = [
+  "No nahi karna 😝",
+  "Agli baar YES kar do na 🥺",
+  "Please maan jao 💖",
+  "Itna bhav mat khao 😅",
+  "Sirf YES chalega 😎",
+  "Dil toot jayega 💔",
+  "Soch lo phir se 🙈"
+];
 
-            var noBtn = document.getElementById("no");
-            noBtn.style.left = x + "px";
-            noBtn.style.top = y + "px";
-        }
-    </script>
+let msgIndex = 0;
+
+function yesClick(){
+    document.body.innerHTML =
+    "<h1 style='color:white;text-align:center;'>Yayyy! I Love You ❤️🥰</h1>";
+}
+
+function moveNo(){
+    var x = Math.random() * (window.innerWidth - 100);
+    var y = Math.random() * (window.innerHeight - 100);
+
+    var noBtn = document.getElementById("no");
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+
+    // Change button text
+    noBtn.innerText = messages[msgIndex];
+    msgIndex = (msgIndex + 1) % messages.length;
+}
+
+</script>
 
 </body>
 
